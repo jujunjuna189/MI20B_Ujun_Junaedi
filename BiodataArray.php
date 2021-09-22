@@ -1,6 +1,6 @@
 <?php
     $biodata = Array(
-        'nama' => 'Ujun Junaedi',
+        'nama'  => 'Ujun Junaedi',
         'kelas' => 'MI20B',
         'email' => 'jujunjuna189@gmail.com',
     );
