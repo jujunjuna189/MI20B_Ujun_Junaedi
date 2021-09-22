@@ -2,12 +2,6 @@
     $nama   = 'Ujun Junaedi';
     $kelas  = 'MI20B';
     $email  = 'jujunjuna189@gmail.com';
-
-    $mata_plj = Array(
-        'Web Programming 1',
-        'Web Design',
-        'Web Development Project',
-    );
 ?>
 <html>
 <head>
@@ -24,11 +18,6 @@
     echo 'My Email Address ' . '<b>' . $email . '</b>';
     echo '<br>';
     echo 'Saya mengambil mata kuliah sebagai berikut';
-    echo '<br>';
-    for($i = 0; $i < count($mata_plj); $i++){
-        echo $i + 1 . '. ' . $mata_plj[$i];
-        echo '<br>';
-    }
 ?>
 </body>
 </html>
