@@ -17,7 +17,7 @@
     echo '<br>';
     echo 'My Class ' . '<b>' . $biodata['kelas'] . '</b>';
     echo '<br>';
-    echo 'My Email Address ' . '<b>' . $biodata['jujunjuna189@gmail.com'] . '</b>';
+    echo 'My Email Address ' . '<b>' . $biodata['email'] . '</b>';
 ?>
 </body>
 </html>
