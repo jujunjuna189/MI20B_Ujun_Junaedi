@@ -25,8 +25,8 @@
     echo '<br>';
     echo 'Saya mengambil mata kuliah sebagai berikut';
     echo '<br>';
-    for($i = 1; $i <= count($mata_plj); $i++){
-        echo $i . '. ' . $mata_plj[$i];
+    for($i = 0; $i < count($mata_plj); $i++){
+        echo $i + 1 . '. ' . $mata_plj[$i];
         echo '<br>';
     }
 ?>
