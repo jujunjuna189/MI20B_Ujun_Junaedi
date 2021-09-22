@@ -25,6 +25,8 @@
     echo '<br>';
     echo 'My Email Address ' . '<b>' . $biodata['email'] . '</b>';
     echo '<br>';
+    echo 'Saya mengambil mata kuliah sebagai berikut';
+    echo '<br>';
     for($i = 0; $i < count($mata_plj); $i++){
         echo $i + 1 . '. ' . $mata_plj[$i];
         echo '<br>';
