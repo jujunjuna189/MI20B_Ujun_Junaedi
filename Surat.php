@@ -13,11 +13,25 @@
 <head>
     <title>Surat Peminjaman Ujun Junaedi</title>
     <style>
+        body{
+            padding-left: 350px;
+            padding-right: 350px;
+        }
         .content{
             padding: 50px;
             padding-bottom: 100px;
             background: #fff;
-            /* box-shadow: 0px 0px 5px 1px grey */
+            box-shadow: 0px 0px 5px 1px grey;
+        }
+        @media print {
+            body{
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+            .content{
+                padding: 0px;
+                box-shadow: 0px 0px 0px 0px grey;
+            }
         }
     </style>
 </head>
