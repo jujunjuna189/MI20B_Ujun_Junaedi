@@ -16,8 +16,6 @@
     echo 'My Class ' . '<b>' . $kelas . '</b>';
     echo '<br>';
     echo 'My Email Address ' . '<b>' . $email . '</b>';
-    echo '<br>';
-    echo 'Saya mengambil mata kuliah sebagai berikut';
 ?>
 </body>
 </html>
