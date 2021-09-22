@@ -21,7 +21,7 @@
             padding: 50px;
             padding-bottom: 100px;
             background: #fff;
-            box-shadow: 0px 0px 5px 1px grey;
+            box-shadow: 0px 0px 0.1rem 0px grey;
         }
         @media print {
             body{
