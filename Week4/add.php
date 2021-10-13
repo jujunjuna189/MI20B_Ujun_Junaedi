@@ -69,7 +69,7 @@ require_once('Connection.php');
                                         </div>
                                     </div>
                                     <div class="col-lg-12 mt-4">
-                                        <button type="submit" value="submit" class="btn btn-info text-white">Add</button>
+                                        <button type="submit" name="submit" value="submit" class="btn btn-info text-white">Add</button>
                                         <a href="view.php" class="btn btn-danger">Cancel</a>
                                     </div>
                                 </div>
@@ -85,22 +85,22 @@ require_once('Connection.php');
     <?php
 
     if (isset($_POST['submit'])) {
-        $no_surat = $_POST['no_surat'];
-        $jenis_surat = $_POST['jenis_surat'];
-        $tgl_surat = $_POST['tgl_surat'];
-        $ttd_surat = $_POST['ttd_surat'];
-        $ttd_menyetujui = $_POST['ttd_menyetujui'];
-        $ttd_mengetahui = $_POST['ttd_mengetahui'];
+        // $no_surat = $_POST['no_surat'];
+        // $jenis_surat = $_POST['jenis_surat'];
+        // $tgl_surat = $_POST['tgl_surat'];
+        // $ttd_surat = $_POST['ttd_surat'];
+        // $ttd_menyetujui = $_POST['ttd_menyetujui'];
+        // $ttd_mengetahui = $_POST['ttd_mengetahui'];
 
-        // SQL Insert to Database db_surat
-        $insert_sql = "INSERT INTO tbl_surat (id, no_surat, jenis_surat, tgl_surat, ttd_surat, ttd_mengetahui, ttd_menyetujui) VALUE ('', '$no_surat', '$jenis_surat', '$tgl_surat', '$ttd_surat', '$ttd_menyetujui', '$ttd_mengetahui')";
-        $insert = $con->query($insert_sql);
+        // // SQL Insert to Database db_surat
+        // $insert_sql = "INSERT INTO tbl_surat (id, no_surat, jenis_surat, tgl_surat, ttd_surat, ttd_mengetahui, ttd_menyetujui) VALUE ('', '$no_surat', '$jenis_surat', '$tgl_surat', '$ttd_surat', '$ttd_menyetujui', '$ttd_mengetahui')";
+        // $insert = $con->query($insert_sql);
 
-        if ($insert) {
-            echo 'Success insert data';
-        } else {
-            echo 'Failed insert data';
-        }
+        // if ($insert) {
+        //     echo 'Success insert data';
+        // } else {
+        //     echo 'Failed insert data';
+        // }
     }
 
     ?>
