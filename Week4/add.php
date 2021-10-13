@@ -97,9 +97,17 @@ require_once('Connection.php');
         $insert = $con->query($insert_sql);
 
         if ($insert) {
-            echo 'Success insert data';
+    ?>
+            <script>
+                alert('Success insert data');
+            </script>
+        <?php
         } else {
-            echo 'Failed insert data';
+        ?>
+            <script>
+                alert('Failed insert data');
+            </script>
+    <?php
         }
     }
 
