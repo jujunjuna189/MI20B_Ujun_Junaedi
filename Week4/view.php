@@ -37,9 +37,20 @@ require_once('Connection.php');
                                     </thead>
                                     <tbody>
                                         <?php foreach ($result as $val) { ?>
+                                            <?php
+                                            if ($val['jenis_surat'] == 1) {
+                                                $js = 'Surat Keputusan';
+                                            } else if ($val['jenis_surat'] == 2) {
+                                                $js = 'Surat Persyaratan';
+                                            } else if ($val['jenis_surat'] == 3) {
+                                                $js = 'Surat Peminjaman';
+                                            } else {
+                                                $js = 'Kode Bermasalah';
+                                            }
+                                            ?>
                                             <tr>
                                                 <td><?= $val['no_surat'] ?></td>
-                                                <td><?= $val['jenis_surat'] ?></td>
+                                                <td><?= $js ?></td>
                                                 <td><?= $val['tgl_surat'] ?></td>
                                                 <td><?= $val['ttd_surat'] ?></td>
                                             </tr>
