@@ -23,6 +23,9 @@ require_once('Connection.php');
                     <div class="card">
                         <div class="card-header bg-white text-uppercase">
                             <div class="h3 text-center">Data Mahasiswa</div>
+                            <div class="float-end">
+                                <a href="add.php" class="badge bg-info py-2 px-2 small text-white fw-bold text-decoration-none">Add Surat</a>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
