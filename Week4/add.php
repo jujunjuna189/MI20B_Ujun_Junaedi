@@ -38,9 +38,9 @@ require_once('Connection.php');
                                             <small>Jenis Surat</small>
                                             <select name="jenis_surat" id="jenis_surat" class="form-control">
                                                 <option value="">Silahkan Pilih...</option>
-                                                <option value="Surat Keputusan">Surat Keputusan</option>
-                                                <option value="Surat Pernyataan">Surat Pernyataan</option>
-                                                <option value="Surat Peminjaman">Surat Peminjaman</option>
+                                                <option value="1">Surat Keputusan</option>
+                                                <option value="2">Surat Pernyataan</option>
+                                                <option value="3">Surat Peminjaman</option>
                                             </select>
                                         </div>
                                     </div>
