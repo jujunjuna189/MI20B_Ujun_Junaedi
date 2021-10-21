@@ -1,5 +1,21 @@
 <?php
 require_once('Connection.php');
+
+$id = $_GET['id'];
+$sql = "SELECT * FROM tbl_surat WHERE id = '$id'";
+$result = $con->query($sql);
+$data = $result->fetch_assoc();
+
+if ($data['jenis_surat'] == 1) {
+    $js = 'Surat Keputusan';
+} else if ($data['jenis_surat'] == 2) {
+    $js = 'Surat Persyaratan';
+} else if ($data['jenis_surat'] == 3) {
+    $js = 'Surat Peminjaman';
+} else {
+    $js = 'Kode Bermasalah';
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,22 +38,22 @@ require_once('Connection.php');
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header bg-white text-uppercase">
-                            <div class="h3 text-center">Add Surat</div>
+                            <div class="h3 text-center">Edit Surat</div>
                         </div>
                         <div class="card-body">
-                            <form action="add_proses.php" method="post">
+                            <form action="edit_proses.php?id=<?= $data['id'] ?>" method="post">
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <small>Nomor Surat</small>
-                                            <input type="text" name="no_surat" id="no_surat" class="form-control" placeholder="SK-2021-09001">
+                                            <input type="text" name="no_surat" id="no_surat" class="form-control" placeholder="SK-2021-09001" value="<?= $data['no_surat'] ?>">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <small>Jenis Surat</small>
                                             <select name="jenis_surat" id="jenis_surat" class="form-control">
-                                                <option value="">Silahkan Pilih...</option>
+                                                <option value="<?= $data['jenis_surat'] ?>"><?= $js ?></option>
                                                 <option value="1">Surat Keputusan</option>
                                                 <option value="2">Surat Pernyataan</option>
                                                 <option value="3">Surat Peminjaman</option>
@@ -47,29 +63,29 @@ require_once('Connection.php');
                                     <div class="col-lg-12 mt-3">
                                         <div class="form-group">
                                             <small>Tgl Surat</small>
-                                            <input type="date" name="tgl_surat" id="tgl_surat" class="form-control">
+                                            <input type="date" name="tgl_surat" id="tgl_surat" class="form-control" value="<?= $data['tgl_surat'] ?>">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 mt-3">
                                         <div class="form-group">
                                             <small>Ttd Surat</small>
-                                            <input type="text" name="ttd_surat" id="ttd_surat" class="form-control">
+                                            <input type="text" name="ttd_surat" id="ttd_surat" class="form-control" value="<?= $data['ttd_surat'] ?>">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mt-3">
                                         <div class="form-group">
                                             <small>Ttd Menyetujui</small>
-                                            <input type="text" name="ttd_menyetujui" id="ttd_menyetujui" class="form-control">
+                                            <input type="text" name="ttd_menyetujui" id="ttd_menyetujui" class="form-control" value="<?= $data['ttd_menyetujui'] ?>">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mt-3">
                                         <div class="form-group">
                                             <small>Ttd Mengetahui</small>
-                                            <input type="text" name="ttd_mengetahui" id="ttd_mengetahui" class="form-control">
+                                            <input type="text" name="ttd_mengetahui" id="ttd_mengetahui" class="form-control" value="<?= $data['ttd_mengetahui'] ?>">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 mt-4">
-                                        <button type="submit" name="submit" class="btn btn-info text-white">Add</button>
+                                        <button type="submit" name="submit" class="btn btn-info text-white">Edit</button>
                                         <a href="view.php" class="btn btn-danger">Cancel</a>
                                     </div>
                                 </div>

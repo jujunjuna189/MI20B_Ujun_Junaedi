@@ -1,4 +1,5 @@
 <?php
+$public_path = "http://localhost:8080/";
 $username = 'root';
 $password = '';
 $database = 'db_surat';

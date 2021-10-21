@@ -36,6 +36,7 @@ require_once('Connection.php');
                                             <th>Jenis Surat</th>
                                             <th>Tgl Surat</th>
                                             <th>Ttd Surat</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -56,6 +57,10 @@ require_once('Connection.php');
                                                 <td><?= $js ?></td>
                                                 <td><?= $val['tgl_surat'] ?></td>
                                                 <td><?= $val['ttd_surat'] ?></td>
+                                                <td>
+                                                    <a href="edit.php?id=<?= $val['id'] ?>" class="badge bg-warning text-dark p-2 text-decoration-none">Edit</a>
+                                                    <a href="#" class="badge bg-danger p-2 text-white text-decoration-none">Delete</a>
+                                                </td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
