@@ -59,7 +59,7 @@ require_once('Connection.php');
                                                 <td><?= $val['ttd_surat'] ?></td>
                                                 <td>
                                                     <a href="edit.php?id=<?= $val['id'] ?>" class="badge bg-warning text-dark p-2 text-decoration-none">Edit</a>
-                                                    <a href="#" class="badge bg-danger p-2 text-white text-decoration-none">Delete</a>
+                                                    <a href="delete_proses.php?id=<?= $val['id'] ?>" onclick="return confirm('Are you sure delete data ?')" class="badge bg-danger p-2 text-white text-decoration-none">Delete</a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
