@@ -1,5 +1,6 @@
 <?php
 $public_path = "http://localhost:8080/";
+$public_link = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">';
 $username = 'root';
 $password = '';
 $database = 'db_surat';
@@ -13,25 +14,17 @@ if ($con->connect_error) {
 $sql = "SELECT * FROM tbl_surat";
 $result = $con->query($sql);
 
-// $js = '';
+// Jenis Surat
+$sql_js = "SELECT * FROM jenis_surat";
+$result_js = $con->query($sql_js);
 
-// if ($data['jenis_surat'] == 1) {
-//     $js = 'SURAT KEPUTUSAN';
-// } else if ($data['jenis_surat'] == 2) {
-//     $js = 'SURAT PERNYATAAN';
-// } else if ($data['jenis_surat'] == 3) {
-//     $js = 'SURAT PEMINJAMAN';
-// } else {
-//     die('Jenis Surat Tidak Terdaftar');
-// }
-
-// $surat = array(
-//     'date'          => $data['tgl_surat'],
-//     'nomor'         => $data['no_surat'],
-//     'kepada'        => $data['ttd_surat'],
-//     'kota'          => 'Tasikmalaya',
-//     'instansi'      => array('LP3I, ', 'Kota Tasikmalaya, ', '081297551925'),
-//     'barang'        => array('Kamera', 'Komputer'),
-//     'ttd'           => $data['ttd_menyetujui'],
-//     'js'            => $js,
-// );
+if (isset($_GET['pesan']) && $_GET['pesan'] == 'tambah') {
+    $action = 'Tambah';
+    $bg = 'info';
+} else if (isset($_GET['pesan']) && $_GET['pesan'] == 'update') {
+    $action = 'Edit';
+    $bg = 'warning';
+} else {
+    $action = 'Delete';
+    $bg = 'danger';
+}

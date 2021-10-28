@@ -28,6 +28,7 @@ if ($data['jenis_surat'] == 1) {
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="assets/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <?= $public_link ?>
 
 </head>
 
@@ -54,9 +55,9 @@ if ($data['jenis_surat'] == 1) {
                                             <small>Jenis Surat</small>
                                             <select name="jenis_surat" id="jenis_surat" class="form-control">
                                                 <option value="<?= $data['jenis_surat'] ?>"><?= $js ?></option>
-                                                <option value="1">Surat Keputusan</option>
-                                                <option value="2">Surat Pernyataan</option>
-                                                <option value="3">Surat Peminjaman</option>
+                                                <?php foreach ($result_js as $val) { ?>
+                                                    <option value="<?= $val['id_js'] ?>"><?= $val['jenis_surat'] ?></option>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
@@ -85,8 +86,8 @@ if ($data['jenis_surat'] == 1) {
                                         </div>
                                     </div>
                                     <div class="col-lg-12 mt-4">
-                                        <button type="submit" name="submit" class="btn btn-info text-white">Edit</button>
-                                        <a href="view.php" class="btn btn-danger">Cancel</a>
+                                        <button type="submit" name="submit" class="btn btn-info text-white"><i class="bi bi-pen"></i> Edit</button>
+                                        <a href="view.php" class="btn btn-danger"><i class="bi bi-arrow-left"></i> Cancel</a>
                                     </div>
                                 </div>
                             </form>

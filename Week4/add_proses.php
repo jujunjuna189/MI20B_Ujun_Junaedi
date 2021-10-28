@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
 ?>
         <script>
             alert('Success insert data');
-            window.location.href = '<?= $public_path . "MI20B_Ujun_Junaedi/Week4/view.php" ?>';
+            window.location.href = '<?= $public_path . "MI20B_Ujun_Junaedi/Week4/view.php?pesan=tambah" ?>';
         </script>
     <?php
     } else {

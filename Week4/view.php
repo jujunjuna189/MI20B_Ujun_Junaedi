@@ -12,6 +12,7 @@ require_once('Connection.php');
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="assets/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <?= $public_link ?>
 
 </head>
 
@@ -20,11 +21,20 @@ require_once('Connection.php');
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+
+                    <!-- Alert -->
+                    <?php if (isset($_GET['pesan'])) : ?>
+                        <div class="alert alert-<?= $bg ?> alert-dismissible fade show" role="alert">
+                            <strong>Berhasil</strong> <?= $action ?> Data.
+                            <a href="view.php" class="btn-close"></a>
+                        </div>
+                    <?php endif ?>
+
                     <div class="card">
                         <div class="card-header bg-white text-uppercase">
                             <div class="h3 text-center">Data Mahasiswa</div>
                             <div class="float-end">
-                                <a href="add.php" class="badge bg-info py-2 px-2 small text-white fw-bold text-decoration-none">Add Surat</a>
+                                <a href="add.php" class="badge bg-info py-2 px-2 small text-white fw-bold text-decoration-none"><i class="bi bi-plus"></i> Add Surat</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -58,8 +68,8 @@ require_once('Connection.php');
                                                 <td><?= $val['tgl_surat'] ?></td>
                                                 <td><?= $val['ttd_surat'] ?></td>
                                                 <td>
-                                                    <a href="edit.php?id=<?= $val['id'] ?>" class="badge bg-warning text-dark p-2 text-decoration-none">Edit</a>
-                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $val['id'] ?>" class="badge bg-danger p-2 text-white text-decoration-none">Delete</a>
+                                                    <a href="edit.php?id=<?= $val['id'] ?>" class="badge bg-warning text-dark p-2 text-decoration-none"><i class="bi bi-pen"></i> Edit</a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $val['id'] ?>" class="badge bg-danger p-2 text-white text-decoration-none"><i class="bi bi-trash"></i> Delete</a>
 
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="deleteModal<?= $val['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -94,8 +104,6 @@ require_once('Connection.php');
             </div>
         </div>
     </div>
-
-
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script> -->
     <script src="assets/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
